@@ -1,0 +1,27 @@
+<cdk-virtual-scroll-viewport [itemSize]="30">
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;border-left: 1px solid #EEEEEE;" scope="col">Nombre</th>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;" scope="col">Criptomoneda</th>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;border-right: 1px solid #EEEEEE;" scope="col">Convertir</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *cdkVirtualFor="let item of totalmonedas" class="separator">
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;border-left: 1px solid #EEEEEE;">{{item.symbol}}</th>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;" *ngIf="item.type == 'CRYPTO'">SI
+        </th>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;" *ngIf="item.type == 'FIAT'">NO</th>
+        <th style="border-bottom: 1px solid #EEEEEE;border-top: 1px solid #EEEEEE;border-right: 1px solid #EEEEEE;"><img
+          src="../../../../assets/shuffle.png" class="image-shuffle" (click)="myfunt(item.symbol, item.type)"></th>
+      </tr>
+    </tbody>
+  </table>
+</cdk-virtual-scroll-viewport>
+
+
+
+
+
+

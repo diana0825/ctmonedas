@@ -1,0 +1,26 @@
+
+<div class="container imgContainer">
+    <div class="container container-card">
+        <div class="card">
+            <div class="d-flex">
+                <div class= 'text-primary container-text'>
+                    <h2 class="texto-titulo" [class]="claseTitular" (click) = "consultapesta1()">
+                        Realizar Cambios
+                    </h2>
+                </div>
+                <div class= 'text-primary container-text'> 
+                    <h2 class="texto-titulo" [class]="clasesegundaria" (click) = "consultapesta2()">
+                        Listar Monedas
+                    </h2>
+                </div>
+            </div>           
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+    <div class="image-container-left">
+        <img src="../../../../assets/down-arrow.png" class="image-router-left" (click) = "consultapesta1()">
+    </div>
+    <div class="image-container-right">
+        <img src="../../../../assets/down-arrow.png" class="image-router-right" (click) = "consultapesta2()">
+    </div>
+</div>

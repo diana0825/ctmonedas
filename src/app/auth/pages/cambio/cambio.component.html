@@ -1,0 +1,31 @@
+<div class="card-body cambio-container">
+  <blockquote class="blockquote mb-0">
+    <h3 class="text-dark">Realizar Cambio</h3>
+    <p class="text-muted texto-secundario">Seleccionar las monedas</p>
+  </blockquote>
+  <form [formGroup] = "miFormulario"id= "inicioForm">
+    <div class="container-inputs-cambio">
+      <div class="container-input-form">
+        <i class="fa fa-dollar-sign form-control-feedback icon-absolute"></i>
+        <input class="form-control input-cambio" formControlName= "valor" type="number" placeholder="   0,00" aria-label="default input example">
+      </div>
+      <select class="form-control input-cambio" formControlName= "simbolo">
+        <option *ngFor="let option of _Selectuno" [value]= "option.symbol">{{option.symbol}}</option>
+      </select>
+      <img src="./../../../../assets/exchange.png" class="image-exchange" (click)="cambiarbusqueda()">
+      <select class="form-control input-cambio" formControlName= "simbolodos">
+        <option value = "">Seleccione opción</option>
+        <option *ngFor="let optiondos of _Selectdos" [value]= "optiondos.symbol">{{optiondos.symbol}}</option>
+      </select>
+
+      <div class="container-input-form">
+        <i class="fa fa-dollar-sign form-control-feedback icon-absolute"></i>
+        <input class="form-control input-cambio" type="text" placeholder="1000,00" name="total" [value]="this.resultados"
+          aria-label="Disabled input example" disabled>
+      </div>
+    </div>
+  </form>
+  <!-- <h3>Formulario</h3>
+  <pre>mi formu: {{miFormulario.valid}}</pre>
+  <pre>{{miFormulario.value | json}}</pre> -->
+</div>
